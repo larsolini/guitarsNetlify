@@ -1,5 +1,4 @@
 const { randomUUID } = require('crypto');
-const id = randomUUID();
 
 const guitars = require('../guitarData.js');
 
@@ -16,7 +15,7 @@ exports.handler = async (event) => {
 
     if (httpMethod === 'POST') {
         const newGuitar = JSON.parse(body);
-        newGuitar.id = uuidv4();
+        newGuitar.id = randomUUID();
         guitars.push(newGuitar);
 
         return {
