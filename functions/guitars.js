@@ -1,4 +1,6 @@
-const { v4: uuidv4 } = require('uuid');
+const { randomUUID } = require('crypto');
+const id = randomUUID();
+
 const guitars = require('../guitarData.js');
 
 exports.handler = async (event) => {
